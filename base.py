@@ -17,11 +17,11 @@ def show_instructions():
 
 def valid_input(question):
     while True:
-        response = input((question)).lower()
-        valid_inputs = ["rock", "scissors", "paper, gun"
-                                        ]
+        response = input(question).lower()
+        valid = ["rock", "scissors", "paper"]
 
-        if response in valid_inputs or response in valid_inputs[0]:
+
+        if response in valid or response in valid[0]:
             return response
         elif response == "xxx":
             quit()
@@ -29,10 +29,6 @@ def valid_input(question):
             print("Please choose a valid option eg.(rock, paper or scissors)")
 
 
-def rounds(question):
-    response = input(question)
-    while response != "":
-        user_choice
 
 
 
@@ -40,15 +36,21 @@ def rounds(question):
 
 
 
+ valid_inputs = ["rock", "scissors", "paper"]
 
+
+def computer():
+    com_choice = random.choice(valid_inputs)
+    print(com_choice)
 
 
 
 
 
 show_instructions()
-rounds("Press enter for continuous mode: ")
+
 user_choice = valid_input("Please choose rock, paper or scissors: ")
+computer()
 
 
 
