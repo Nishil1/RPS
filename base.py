@@ -26,6 +26,8 @@ def valid_input(question):
             return response == "s"
         elif response == "p" or response == "paper":
             return response == "p"
+        elif response == "xxx":
+            quit()
 
 
         else:
@@ -36,11 +38,12 @@ def type_of_play(question):
 
         response = input(question)
         if response == "":
-            while True:
-                user_choice
+            print("continuous mode")
+            return response
 
         elif response == "a":
            print()
+           return response
         else:
             print("Please enter a valid input to decide type of gameplay")
 
@@ -62,16 +65,14 @@ def who_wins(user, computer):
         print("You lost")
 
 
-
-
-
-
-
-
 show_instructions()
 
+# set up addition game rules
+
+#start game
+
 play_type = type_of_play("Press <enter> to enter continuous "
-                  "mode or press 'a' to set the amount of rounds")
+                "mode or press 'a' to set the amount of rounds")
 
 
 user_choice = valid_input("Please choose rock, paper or scissors or type 'xxx' to quit: ")
