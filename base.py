@@ -4,10 +4,10 @@ import random
 def show_instructions():
     while True:
         question = input("Have you played the game before? ")
-        instructions = ("Show Instructions")
+        instructions = "Show Instructions"
 
         if question == "yes" or question == "y":
-            print(instructions)
+
             return
         elif question == "no" or question == "n":
             print(instructions)
@@ -15,33 +15,54 @@ def show_instructions():
         else:
             print("Please enter yes/no")
 
+
+
 def valid_input(question):
     while True:
         response = input(question).lower()
-        valid = ["rock", "scissors", "paper"]
+        if response == "r" or response == "rock":
+            return response == "r"
+        elif response == "s" or response == "scissors":
+            return response == "s"
+        elif response == "p" or response == "paper":
+            return response == "p"
 
 
-        if response in valid or response in valid[0]:
-            return response
-        elif response == "xxx":
-            quit()
         else:
-            print("Please choose a valid option eg.(rock, paper or scissors)")
+            print("Please enter a valid choice eg. rock, paper or scissors")
+
+def type_of_play(question):
+    while True:
+
+        response = input(question)
+        if response == "":
+            while True:
+                user_choice
+
+        elif response == "a":
+           print()
+        else:
+            print("Please enter a valid input to decide type of gameplay")
+
+
+def who_wins(user, computer):
+    if user == computer:
+        print("draw")
+    elif user == "s" and computer == "p":
+        print("You won")
+    elif user == "p" and computer == "s":
+        print("you lost")
+    elif user == "r" and computer == "p":
+        print("You lost")
+    elif user == "p" and computer == "r":
+        print("You won")
+    elif user == "r" and computer == "s":
+        print("You won")
+    elif user == "s" and computer == "r":
+        print("You lost")
 
 
 
-
-
-
-
-
-
- valid_inputs = ["rock", "scissors", "paper"]
-
-
-def computer():
-    com_choice = random.choice(valid_inputs)
-    print(com_choice)
 
 
 
@@ -49,8 +70,13 @@ def computer():
 
 show_instructions()
 
-user_choice = valid_input("Please choose rock, paper or scissors: ")
-computer()
+play_type = type_of_play("Press <enter> to enter continuous "
+                  "mode or press 'a' to set the amount of rounds")
+
+
+user_choice = valid_input("Please choose rock, paper or scissors or type 'xxx' to quit: ")
+
+
 
 
 
