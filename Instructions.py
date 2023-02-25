@@ -1,7 +1,7 @@
 def show_instructions():
     while True:
         question = input("Have you played the game before? ")
-        instructions = ("Show Instructions")
+        instructions = "Show Instructions"
 
         if question == "yes" or question == "y":
             print(instructions)
