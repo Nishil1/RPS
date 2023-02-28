@@ -56,14 +56,14 @@ if played_before == "no":
           "an amount of rounds. After game ends,"
           "statistics will be displayed")
 # asks # of rounds/infinite
-rounds_wanted = num_check("Enter an amount of rounds or press <enter> for unlimited gameplay")
+rounds_wanted = num_check("Enter an amount of rounds or press <enter> for unlimited gameplay: ")
 
 if rounds_wanted == "":
     # sets rounds wanted to practically infinite if user chooses infinite gameplay
     rounds_wanted = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000
 
 # Game loop starts here
-while rounds_played < rounds_wanted:
+while rounds_played <= rounds_wanted:
     if mode == "infinite":
         rounds_wanted += 1
 
