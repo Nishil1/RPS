@@ -56,7 +56,7 @@ if played_before == "no":
           "an amount of rounds. After game ends,"
           "statistics will be displayed")
 # asks # of rounds/infinite
-rounds_wanted = num_check("How many rounds?  Press <enter> for infinite")
+rounds_wanted = num_check("Enter an amount of rounds or press <enter> for unlimited gameplay")
 
 if rounds_wanted == "":
     # sets rounds wanted to practically infinite if user chooses infinite gameplay
