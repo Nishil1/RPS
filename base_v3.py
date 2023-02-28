@@ -1,12 +1,13 @@
 import random
+
+
 # checks users enter a valid choice based on a list
 # used for yes / no and r / p / s responses
 def choice_checker(question, valid_responses, error):
     while True:
         response = input(question).lower()
+
         for item in valid_responses:
-            if response in valid_responses and (response == "xxx" or response == "x"):
-                break
 
             if response == item[0] or response == item:
                 return item
@@ -51,16 +52,20 @@ games_won = 0
 games_lost = 0
 games_drawn = 0
 num_of_rounds = 0
+
+# displays instructions if requested
 if played_before == "no":
     print("You can choose a type of play, either continuous or enter "
           "an amount of rounds. After game ends,"
           "statistics will be displayed")
+
 # asks # of rounds/infinite
 rounds_wanted = num_check("Enter an amount of rounds or press <enter> for unlimited gameplay: ")
 
 if rounds_wanted == "":
     # sets rounds wanted to practically infinite if user chooses infinite gameplay
-    rounds_wanted = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    mode = "infinite"
+    rounds_wanted = 5
 
 # Game loop starts here
 while rounds_played <= rounds_wanted:
@@ -74,8 +79,10 @@ while rounds_played <= rounds_wanted:
     # checks for exit code
     if user_choice == "xxx":
         break
-        # generates computer choice
+
+    # generates computer choice
     computer_choice = random.choice(rps_list[:-1])
+
     # decide the winner
     # if it's a draw
     if user_choice == computer_choice:
@@ -99,5 +106,7 @@ while rounds_played <= rounds_wanted:
         print("XXXX {} v {}. You lost! XXXX".format(user_choice, computer_choice))
         games_lost += 1
         print()
+
 # End of game - show stats
 print(f"Games won: {games_won}, Games lost: {games_lost}, Games drawn: {games_drawn}")
+print("Thanks for playing!")
